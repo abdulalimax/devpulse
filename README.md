@@ -1,18 +1,18 @@
-# 🚼 DevPulse
+#  DevPulse
 
 Internal Tech Issue and Feature Tracker  
 A collaborative platform for software teams to report bugs suggest features and coordinate resolutions
 
 ---
 
-## 🚀 Submission Deployment Links
+##  Submission Deployment Links
 
 * GitHub Repo Public: https://github.com/abdulalimax/devpulse  
 * Live Deployment Public: https://devpulse-rho-blue.vercel.app  
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 * Role-Based Access Control: Secure separation between contributor and maintainer permissions  
 * Issue Management System: Structured workflow for bugs and feature requests  
@@ -21,7 +21,7 @@ A collaborative platform for software teams to report bugs suggest features and 
 
 ---
 
-## 🧰 Technology Stack
+##  Technology Stack
 
 * Runtime: Node.js LTS 24.x or higher  
 * Language: TypeScript (Strict Mode)  
@@ -31,7 +31,7 @@ A collaborative platform for software teams to report bugs suggest features and 
 
 ---
 
-## 🗄️ Database Schema Summary
+##  Database Schema Summary
 
 ### Users Table
 
@@ -58,7 +58,7 @@ A collaborative platform for software teams to report bugs suggest features and 
 
 ---
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 ### Authentication
 
@@ -77,7 +77,7 @@ A collaborative platform for software teams to report bugs suggest features and 
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 Clone repository  
 git clone https://github.com/abdulalimax/devpulse.git  
@@ -99,7 +99,7 @@ npm run dev
 
 ---
 
-## ⚠️ Important Notes
+##  Important Notes
 
 * All API endpoints must match specification exactly  
 * No ORM allowed, only raw SQL  
@@ -109,12 +109,12 @@ npm run dev
 
 ---
 
-## 📦 Project Summary
+##  Project Summary
 
 DevPulse is a backend issue tracking system built using Node.js, TypeScript, Express, and PostgreSQL with secure authentication, role-based access control, and raw SQL database operations  
 
 ---
 
-## 🎓 Assignment Ready
+##  Assignment Ready
 
 This project is fully structured for backend evaluation and deployment submission
