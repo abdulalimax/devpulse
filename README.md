@@ -87,9 +87,10 @@ Install dependencies
 npm install  
 
 Create .env file  
-PORT=5000  
-DATABASE_URL=your_postgres_url  
-JWT_SECRET=your_secret_key  
+PORT=5000
+DATABASE_URL=postgresql://neondb_owner:npg_h6SAiXwcZ4HD@ep-cool-sun-aisjl3ls-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+JWT_SECRET=super_secret_key_123_devpulse
+ 
 
 Build project  
 npm run build  
