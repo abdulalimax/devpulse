@@ -1,121 +1,108 @@
-#  DevPulse
+# DevPulse — Internal Tech Issue & Feature Tracker 🚀
 
-Internal Tech Issue and Feature Tracker  
-A collaborative platform for software teams to report bugs suggest features and coordinate resolutions
+### 📋 Project Overview
 
----
-
-##  Submission Deployment Links
-
-* GitHub Repo Public: https://github.com/abdulalimax/devpulse  
-* Live Deployment Public: https://devpulse-rho-blue.vercel.app  
+**DevPulse** is a robust, production-ready backend issue tracking system engineered for modern software engineering teams. It provides a collaborative platform to report bugs, suggest features, coordinate resolutions, and manage agile workflows with strict security and performance standards.
 
 ---
 
-##  Key Features
+### 🌐 Submission & Deployment Links
 
-* Role-Based Access Control: Secure separation between contributor and maintainer permissions  
-* Issue Management System: Structured workflow for bugs and feature requests  
-* JWT Authentication: Stateless secure authentication using JSON Web Tokens  
-* Raw SQL Database Layer: Direct PostgreSQL queries using native pg driver without ORM  
+- **GitHub Repository (Public):** [View Source Code](https://github.com/abdulalimax/devpulse)
+- **Live Deployment (Public):** [Explore Live API / App](https://devpulse-rho-blue.vercel.app)
 
 ---
 
-##  Technology Stack
+### ✨ Key Features & Architecture
 
-* Runtime: Node.js LTS 24.x or higher  
-* Language: TypeScript (Strict Mode)  
-* Framework: Express.js (Modular Architecture)  
-* Database: PostgreSQL (Native pg driver)  
-* Security: bcrypt jsonwebtoken  
-
----
-
-##  Database Schema Summary
-
-### Users Table
-
-* id: Auto-increment primary key  
-* name: Full display name  
-* email: Unique login email  
-* password: Hashed password (never returned)  
-* role: contributor or maintainer (default: contributor)  
-* created_at: Auto timestamp  
-* updated_at: Auto timestamp  
+- **Role-Based Access Control (RBAC):** Strict security separation and permission guards between *Contributor* and *Maintainer* roles.
+- **Issue Management System:** Structured lifecycle workflows for tracking bugs and feature requests.
+- **JWT Authentication:** Secure, stateless session handling using JSON Web Tokens.
+- **Raw SQL Database Layer:** High-performance PostgreSQL operations utilizing native `pg` driver connections without relying on heavy ORMs.
 
 ---
 
-### Issues Table
+### 🛠️ Technology Stack
 
-* id: Auto-increment primary key  
-* title: Maximum 150 characters  
-* description: Minimum 20 characters  
-* type: bug or feature_request  
-* status: open in_progress resolved (default: open)  
-* reporter_id: User reference from JWT  
-* created_at: Auto timestamp  
-* updated_at: Auto timestamp  
+- **Runtime:** Node.js (LTS 24.x or higher)
+- **Language:** TypeScript (Strict Mode)
+- **Framework:** Express.js (Modular Architecture)
+- **Database:** PostgreSQL (Native `pg` driver)
+- **Security & Validation:** `bcrypt`, `jsonwebtoken`
+- **Deployment Platform:** Vercel
 
 ---
 
-##  API Endpoints
+### 📊 Database Schema Summary
 
-### Authentication
+#### **1. Users Table**
+- `id`: Auto-increment primary key
+- `name`: Full display name
+- `email`: Unique login email
+- `password`: Hashed password (*strictly secured and never exposed in responses*)
+- `role`: `contributor` or `maintainer` (default: `contributor`)
+- `created_at` / `updated_at`: Auto timestamps
 
-* POST /api/auth/signup - Register new user  
-* POST /api/auth/login - Login and receive JWT  
+#### **2. Issues Table**
+- `id`: Auto-increment primary key
+- `title`: Maximum 150 characters
+- `description`: Minimum 20 characters
+- `type`: `bug` or `feature_request`
+- `status`: `open`, `in_progress`, `resolved` (default: `open`)
+- `reporter_id`: User reference mapped securely from JWT
+- `created_at` / `updated_at`: Auto timestamps
 
 ---
 
-### Issues
+### 🔌 API Endpoints Reference
 
-* POST /api/issues - Create issue (Authentication required)  
-* GET /api/issues - Get all issues with filter and sort support  
-* GET /api/issues/:id - Get single issue  
-* PATCH /api/issues/:id - Update issue based on role permissions  
-* DELETE /api/issues/:id - Delete issue (Maintainer only)  
+#### **Authentication**
+- `POST /api/auth/signup` — Register a new platform user
+- `POST /api/auth/login` — Authenticate user and receive JWT session token
+
+#### **Issues Management**
+- `POST /api/issues` — Create a new issue/bug ticket *(Authentication required)*
+- `GET /api/issues` — Retrieve all issues with advanced filtering and sorting support
+- `GET /api/issues/:id` — Retrieve a single issue by its unique identifier
+- `PATCH /api/issues/:id` — Update issue details based on role-based permissions
+- `DELETE /api/issues/:id` — Delete an issue ticket *([Maintainer Only])*
 
 ---
 
-##  Setup Instructions
+### ⚙️ Local Installation & Setup Instructions
 
-Clone repository  
-git clone https://github.com/abdulalimax/devpulse.git  
-cd devpulse  
+To run this backend project locally on your machine, follow these steps:
 
-Install dependencies  
-npm install  
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/abdulalimax/devpulse.git](https://github.com/abdulalimax/devpulse.git)
+   cd devpulse
+Install dependencies:
 
-Create .env file  
+Bash
+npm install
+Configure environment variables:
+Create a .env file in the root directory and add your configuration:
+
+Code snippet
 PORT=5000
-DATABASE_URL=postgresql://neondb_owner:npg_h6SAiXwcZ4HD@ep-cool-sun-aisjl3ls-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-JWT_SECRET=super_secret_key_123_devpulse
- 
+DATABASE_URL="your_postgresql_connection_string"
+JWT_SECRET="super_secret_key_123_devpulse"
+Build the project:
 
-Build project  
-npm run build  
+Bash
+npm run build
+Start the development server:
 
-Run development server  
-npm run dev  
+Bash
+npm run dev
+⚠️ Important Engineering Guidelines
+All API endpoints strictly adhere to the defined specification.
 
----
+Zero ORM usage; all database interactions are executed via secure raw SQL queries.
 
-##  Important Notes
+User passwords are cryptographically hashed and never returned in API responses.
 
-* All API endpoints must match specification exactly  
-* No ORM allowed, only raw SQL  
-* Passwords must never be returned in responses  
-* JWT required for protected routes  
-* Strict TypeScript mode must be followed  
+Protected routes enforce mandatory JWT validation.
 
----
-
-##  Project Summary
-
-DevPulse is a backend issue tracking system built using Node.js, TypeScript, Express, and PostgreSQL with secure authentication, role-based access control, and raw SQL database operations  
-
----
-
-##  Assignment Ready
-
-This project is fully structured for backend evaluation and deployment submission
+Built and maintained under strict TypeScript compilation constraints
